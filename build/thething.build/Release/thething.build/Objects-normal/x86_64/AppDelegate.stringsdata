@@ -1,0 +1,128 @@
+{
+  "source": "/Users/dev/Documents/code/thething/thething/AppDelegate.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "to",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 141
+        }
+      },
+      {
+        "comment": "",
+        "key": "mm:ss:msms",
+        "location": {
+          "startingColumn": 23,
+          "startingLine": 123
+        }
+      },
+      {
+        "comment": "",
+        "key": "mm:ss:msms",
+        "location": {
+          "startingColumn": 23,
+          "startingLine": 142
+        }
+      },
+      {
+        "comment": "",
+        "key": "Spawn",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 299
+        }
+      },
+      {
+        "comment": "",
+        "key": "Audio Track",
+        "location": {
+          "startingColumn": 25,
+          "startingLine": 335
+        }
+      },
+      {
+        "comment": "",
+        "key": "Play/Pause",
+        "location": {
+          "startingColumn": 25,
+          "startingLine": 360
+        }
+      },
+      {
+        "comment": "",
+        "key": "Timecodes",
+        "location": {
+          "startingColumn": 25,
+          "startingLine": 376
+        }
+      },
+      {
+        "comment": "",
+        "key": "Open File",
+        "location": {
+          "startingColumn": 32,
+          "startingLine": 337
+        }
+      },
+      {
+        "comment": "",
+        "key": "Select an audio track to play.",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 356
+        }
+      },
+      {
+        "comment": "",
+        "key": "⌘ ⇧ R",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 366
+        }
+      },
+      {
+        "comment": "",
+        "key": "⌘ R",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 372
+        }
+      },
+      {
+        "comment": "",
+        "key": "Format: mm:ss:msms",
+        "location": {
+          "startingColumn": 35,
+          "startingLine": 401
+        }
+      },
+      {
+        "comment": "",
+        "key": "Time Start: ",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 403
+        }
+      },
+      {
+        "comment": "",
+        "key": "Format: mm:ss:msms",
+        "location": {
+          "startingColumn": 35,
+          "startingLine": 407
+        }
+      },
+      {
+        "comment": "",
+        "key": "Time End: ",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 409
+        }
+      }
+    ]
+  },
+  "version": 1
+}

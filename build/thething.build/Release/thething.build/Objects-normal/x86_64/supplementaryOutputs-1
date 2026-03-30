@@ -1,0 +1,12 @@
+{
+  "/Users/dev/Documents/code/thething/thething/Alert.swift" : {
+    "abi-baseline-json" : "/Users/dev/Documents/code/thething/build/thething.build/Release/thething.build/Objects-normal/x86_64/thething.abi.json",
+    "const-values" : "/Users/dev/Documents/code/thething/build/thething.build/Release/thething.build/Objects-normal/x86_64/thething-primary.swiftconstvalues",
+    "dependencies" : "/Users/dev/Documents/code/thething/build/thething.build/Release/thething.build/Objects-normal/x86_64/thething-primary.d",
+    "diagnostics" : "/Users/dev/Documents/code/thething/build/thething.build/Release/thething.build/Objects-normal/x86_64/thething-primary.dia",
+    "objc-header" : "/Users/dev/Documents/code/thething/build/thething.build/Release/thething.build/Objects-normal/x86_64/thething-Swift.h",
+    "swiftdoc" : "/Users/dev/Documents/code/thething/build/thething.build/Release/thething.build/Objects-normal/x86_64/thething.swiftdoc",
+    "swiftmodule" : "/Users/dev/Documents/code/thething/build/thething.build/Release/thething.build/Objects-normal/x86_64/thething.swiftmodule",
+    "swiftsourceinfo" : "/Users/dev/Documents/code/thething/build/thething.build/Release/thething.build/Objects-normal/x86_64/thething.swiftsourceinfo"
+  }
+}

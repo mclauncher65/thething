@@ -1,0 +1,47 @@
+{
+  "fill" : {
+    "solid" : "display-p3:0.56654,0.65883,0.80123,1.00000"
+  },
+  "groups" : [
+    {
+      "layers" : [
+        {
+          "glass" : false,
+          "image-name" : "errr.png",
+          "name" : "errr",
+          "position" : {
+            "scale" : 0.75,
+            "translation-in-points" : [
+              183.0390625,
+              0
+            ]
+          }
+        },
+        {
+          "fill" : "automatic",
+          "glass" : true,
+          "image-name" : "lwdw.png",
+          "name" : "lwdw",
+          "position" : {
+            "scale" : 3,
+            "translation-in-points" : [
+              0,
+              0
+            ]
+          }
+        }
+      ],
+      "shadow" : {
+        "kind" : "neutral",
+        "opacity" : 0.5
+      },
+      "translucency" : {
+        "enabled" : true,
+        "value" : 0.5
+      }
+    }
+  ],
+  "supported-platforms" : {
+    "squares" : "shared"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "source": "/Users/dev/Documents/code/thething/thething/DockAligner.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "General",
+        "location": {
+          "startingColumn": 17,
+          "startingLine": 40
+        }
+      },
+      {
+        "comment": "",
+        "key": "Where will the dock be?",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 42
+        }
+      },
+      {
+        "comment": "",
+        "key": "Dock Alignment: ",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 48
+        }
+      }
+    ]
+  },
+  "version": 1
+}

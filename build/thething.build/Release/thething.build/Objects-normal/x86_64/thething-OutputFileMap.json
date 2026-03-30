@@ -1,0 +1,51 @@
+{
+  "" : {
+    "const-values" : "/Users/dev/Documents/code/thething/build/thething.build/Release/thething.build/Objects-normal/x86_64/thething-primary.swiftconstvalues",
+    "dependencies" : "/Users/dev/Documents/code/thething/build/thething.build/Release/thething.build/Objects-normal/x86_64/thething-primary.d",
+    "diagnostics" : "/Users/dev/Documents/code/thething/build/thething.build/Release/thething.build/Objects-normal/x86_64/thething-primary.dia",
+    "emit-module-dependencies" : "/Users/dev/Documents/code/thething/build/thething.build/Release/thething.build/Objects-normal/x86_64/thething-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/dev/Documents/code/thething/build/thething.build/Release/thething.build/Objects-normal/x86_64/thething-primary-emit-module.dia",
+    "pch" : "/Users/dev/Documents/code/thething/build/thething.build/Release/thething.build/Objects-normal/x86_64/thething-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/dev/Documents/code/thething/build/thething.build/Release/thething.build/Objects-normal/x86_64/thething-primary.swiftdeps"
+  },
+  "/Users/dev/Documents/code/thething/build/thething.build/Release/thething.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "index-unit-output-path" : "/thething.build/Release/thething.build/Objects-normal/x86_64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/dev/Documents/code/thething/build/thething.build/Release/thething.build/Objects-normal/x86_64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/dev/Documents/code/thething/build/thething.build/Release/thething.build/Objects-normal/x86_64/GeneratedAssetSymbols.o"
+  },
+  "/Users/dev/Documents/code/thething/thething/Alert.swift" : {
+    "index-unit-output-path" : "/thething.build/Release/thething.build/Objects-normal/x86_64/Alert.o",
+    "llvm-bc" : "/Users/dev/Documents/code/thething/build/thething.build/Release/thething.build/Objects-normal/x86_64/Alert.bc",
+    "object" : "/Users/dev/Documents/code/thething/build/thething.build/Release/thething.build/Objects-normal/x86_64/Alert.o"
+  },
+  "/Users/dev/Documents/code/thething/thething/App.swift" : {
+    "index-unit-output-path" : "/thething.build/Release/thething.build/Objects-normal/x86_64/App.o",
+    "llvm-bc" : "/Users/dev/Documents/code/thething/build/thething.build/Release/thething.build/Objects-normal/x86_64/App.bc",
+    "object" : "/Users/dev/Documents/code/thething/build/thething.build/Release/thething.build/Objects-normal/x86_64/App.o"
+  },
+  "/Users/dev/Documents/code/thething/thething/AppDelegate.swift" : {
+    "index-unit-output-path" : "/thething.build/Release/thething.build/Objects-normal/x86_64/AppDelegate.o",
+    "llvm-bc" : "/Users/dev/Documents/code/thething/build/thething.build/Release/thething.build/Objects-normal/x86_64/AppDelegate.bc",
+    "object" : "/Users/dev/Documents/code/thething/build/thething.build/Release/thething.build/Objects-normal/x86_64/AppDelegate.o"
+  },
+  "/Users/dev/Documents/code/thething/thething/AppleScriptWrapper.swift" : {
+    "index-unit-output-path" : "/thething.build/Release/thething.build/Objects-normal/x86_64/AppleScriptWrapper.o",
+    "llvm-bc" : "/Users/dev/Documents/code/thething/build/thething.build/Release/thething.build/Objects-normal/x86_64/AppleScriptWrapper.bc",
+    "object" : "/Users/dev/Documents/code/thething/build/thething.build/Release/thething.build/Objects-normal/x86_64/AppleScriptWrapper.o"
+  },
+  "/Users/dev/Documents/code/thething/thething/DesktopImageSetter.swift" : {
+    "index-unit-output-path" : "/thething.build/Release/thething.build/Objects-normal/x86_64/DesktopImageSetter.o",
+    "llvm-bc" : "/Users/dev/Documents/code/thething/build/thething.build/Release/thething.build/Objects-normal/x86_64/DesktopImageSetter.bc",
+    "object" : "/Users/dev/Documents/code/thething/build/thething.build/Release/thething.build/Objects-normal/x86_64/DesktopImageSetter.o"
+  },
+  "/Users/dev/Documents/code/thething/thething/DockAligner.swift" : {
+    "index-unit-output-path" : "/thething.build/Release/thething.build/Objects-normal/x86_64/DockAligner.o",
+    "llvm-bc" : "/Users/dev/Documents/code/thething/build/thething.build/Release/thething.build/Objects-normal/x86_64/DockAligner.bc",
+    "object" : "/Users/dev/Documents/code/thething/build/thething.build/Release/thething.build/Objects-normal/x86_64/DockAligner.o"
+  },
+  "/Users/dev/Documents/code/thething/thething/FileSpammer.swift" : {
+    "index-unit-output-path" : "/thething.build/Release/thething.build/Objects-normal/x86_64/FileSpammer.o",
+    "llvm-bc" : "/Users/dev/Documents/code/thething/build/thething.build/Release/thething.build/Objects-normal/x86_64/FileSpammer.bc",
+    "object" : "/Users/dev/Documents/code/thething/build/thething.build/Release/thething.build/Objects-normal/x86_64/FileSpammer.o"
+  }
+}

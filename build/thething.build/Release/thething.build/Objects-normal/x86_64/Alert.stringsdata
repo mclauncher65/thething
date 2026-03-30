@@ -1,0 +1,264 @@
+{
+  "source": "/Users/dev/Documents/code/thething/thething/Alert.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Alert Info",
+        "location": {
+          "startingColumn": 17,
+          "startingLine": 75
+        }
+      },
+      {
+        "comment": "",
+        "key": "Buttons",
+        "location": {
+          "startingColumn": 17,
+          "startingLine": 170
+        }
+      },
+      {
+        "comment": "",
+        "key": "Miscellaneous",
+        "location": {
+          "startingColumn": 17,
+          "startingLine": 200
+        }
+      },
+      {
+        "comment": "",
+        "key": "Open File",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 79
+        }
+      },
+      {
+        "comment": "",
+        "key": "Alert Icon: ",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 98
+        }
+      },
+      {
+        "comment": "",
+        "key": "General info about the alert",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 106
+        }
+      },
+      {
+        "comment": "",
+        "key": "Show Alert Title",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 103
+        }
+      },
+      {
+        "comment": "",
+        "key": "Alert Title: ",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 109
+        }
+      },
+      {
+        "comment": "",
+        "key": "What does the alert do?",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 117
+        }
+      },
+      {
+        "comment": "",
+        "key": "Show Alert Details",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 114
+        }
+      },
+      {
+        "comment": "",
+        "key": "Alert Details: ",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 120
+        }
+      },
+      {
+        "comment": "",
+        "key": "Has Offset",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 126
+        }
+      },
+      {
+        "comment": "",
+        "key": "Offset X: ",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 130
+        }
+      },
+      {
+        "comment": "",
+        "key": "Offset Y: ",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 141
+        }
+      },
+      {
+        "comment": "",
+        "key": "Some Number (x)",
+        "location": {
+          "startingColumn": 39,
+          "startingLine": 132
+        }
+      },
+      {
+        "comment": "",
+        "key": "Some Number (y)",
+        "location": {
+          "startingColumn": 39,
+          "startingLine": 143
+        }
+      },
+      {
+        "comment": "",
+        "key": "Offset from Last Alert: ",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 154
+        }
+      },
+      {
+        "comment": "",
+        "key": "Checkbox Label",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 163
+        }
+      },
+      {
+        "comment": "",
+        "key": "Show Alert Checkbox",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 160
+        }
+      },
+      {
+        "comment": "",
+        "key": "Alert Checkbox: ",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 166
+        }
+      },
+      {
+        "comment": "",
+        "key": "Button 1 Title",
+        "location": {
+          "startingColumn": 27,
+          "startingLine": 172
+        }
+      },
+      {
+        "comment": "",
+        "key": "Button 1: ",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 174
+        }
+      },
+      {
+        "comment": "",
+        "key": "Button 2 Title",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 182
+        }
+      },
+      {
+        "comment": "",
+        "key": "Show Button 2",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 179
+        }
+      },
+      {
+        "comment": "",
+        "key": "Button 2: ",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 185
+        }
+      },
+      {
+        "comment": "",
+        "key": "Button 3 Title",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 193
+        }
+      },
+      {
+        "comment": "",
+        "key": "Show Button 3",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 190
+        }
+      },
+      {
+        "comment": "",
+        "key": "Button 3: ",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 196
+        }
+      },
+      {
+        "comment": "",
+        "key": "Has Help Button",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 203
+        }
+      },
+      {
+        "comment": "",
+        "key": "Help Button: ",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 206
+        }
+      },
+      {
+        "comment": "",
+        "key": "Has Alert Aligned to Left",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 211
+        }
+      },
+      {
+        "comment": "",
+        "key": "Left Align: ",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 214
+        }
+      }
+    ]
+  },
+  "version": 1
+}

@@ -1,0 +1,32 @@
+{
+  "source": "/Users/dev/Documents/code/thething/thething/DesktopImageSetter.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "General",
+        "location": {
+          "startingColumn": 17,
+          "startingLine": 38
+        }
+      },
+      {
+        "comment": "",
+        "key": "Open File",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 42
+        }
+      },
+      {
+        "comment": "",
+        "key": "New Desktop Image: ",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 63
+        }
+      }
+    ]
+  },
+  "version": 1
+}
