@@ -2,7 +2,7 @@
 //  AppleScriptWrapper.swift
 //  thething
 //
-//  Created by Dev Dashora on 4/5/26.
+//  Created by rdjpower on 4/5/26.
 //
 
 import Foundation
@@ -14,6 +14,10 @@ struct AppleScriptWrapper: Useful, Identifiable {
     
     var startTime: UInt
     var endTime: UInt // ~~ Useless ~~
+    
+    private enum CodingKeys : String, CodingKey {
+        case name, script, startTime, endTime
+    }
     
     init(name: String, script: String, startTime: UInt, endTime: UInt) {
         self.name = name

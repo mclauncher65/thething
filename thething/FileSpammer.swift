@@ -2,7 +2,7 @@
 //  FileSpammer.swift
 //  thething
 //
-//  Created by Dev Dashora on 4/5/26.
+//  Created by rdjpower on 4/5/26.
 //
 
 import Foundation
@@ -55,6 +55,10 @@ class FileSpammer: Useful, Identifiable {
     var urls: [URL] = []
     var startTime: UInt
     var endTime: UInt
+    
+    private enum CodingKeys : String, CodingKey {
+        case name, count, urls, startTime, endTime
+    }
     
     init(startTime: UInt, endTime: UInt, count: UInt) {
         self.startTime = startTime

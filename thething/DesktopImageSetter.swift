@@ -2,7 +2,7 @@
 //  DesktopImageSetter.swift
 //  thething
 //
-//  Created by Dev Dashora on 4/7/26.
+//  Created by rdjpower on 4/7/26.
 //
 
 import Foundation
@@ -73,6 +73,10 @@ class DesktopImageSetter: Useful, Identifiable {
     var startTime: UInt
     var endTime: UInt // ~~Useless~~
     var url: URL
+    
+    private enum CodingKeys : String, CodingKey {
+        case name, startTime, endTime, url
+    }
     
     init(startTime: UInt, endTime: UInt, url: URL) {
         self.startTime = startTime

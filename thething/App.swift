@@ -2,7 +2,7 @@
 //  Main.swift
 //  thething
 //
-//  Created by Dev Dashora on 3/30/26.
+//  Created by rdjpower on 3/30/26.
 //
 
 import AppKit

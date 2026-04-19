@@ -2,7 +2,7 @@
 //  Shortcut.h
 //  thething
 //
-//  Created by Dev Dashora on 4/6/26.
+//  Created by rdjpower on 4/6/26.
 //
 
 #ifndef Shortcut_h

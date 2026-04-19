@@ -2,7 +2,7 @@
 //  Shortcut.c
 //  thething
 //
-//  Created by Dev Dashora on 4/6/26.
+//  Created by rdjpower on 4/6/26.
 //
 
 #include "Shortcut.h"

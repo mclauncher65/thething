@@ -380,6 +380,8 @@ SWIFT_CLASS("_TtC8thething5Alert")
 @class NSApplication;
 SWIFT_CLASS("_TtC8thething11AppDelegate")
 @interface AppDelegate : NSObject <NSApplicationDelegate>
+- (void)save:(id _Nullable)sender;
+- (void)load:(id _Nullable)sender;
 - (void)applicationDidFinishLaunching:(NSNotification * _Nonnull)aNotification;
 - (void)applicationWillTerminate:(NSNotification * _Nonnull)aNotification;
 - (BOOL)applicationSupportsSecureRestorableState:(NSApplication * _Nonnull)app SWIFT_WARN_UNUSED_RESULT;
