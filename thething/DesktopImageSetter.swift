@@ -74,6 +74,10 @@ class DesktopImageSetter: Useful, Identifiable {
     var endTime: UInt // ~~Useless~~
     var url: URL
     
+    private enum CodingKeys : String, CodingKey {
+        case name, startTime, endTime, url
+    }
+    
     init(startTime: UInt, endTime: UInt, url: URL) {
         self.startTime = startTime
         self.endTime = endTime

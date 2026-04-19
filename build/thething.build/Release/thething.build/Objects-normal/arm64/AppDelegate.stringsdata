@@ -7,23 +7,31 @@
         "key": "to",
         "location": {
           "startingColumn": 18,
-          "startingLine": 141
-        }
-      },
-      {
-        "comment": "",
-        "key": "mm:ss:msms",
-        "location": {
-          "startingColumn": 23,
-          "startingLine": 123
-        }
-      },
-      {
-        "comment": "",
-        "key": "mm:ss:msms",
-        "location": {
-          "startingColumn": 23,
           "startingLine": 142
+        }
+      },
+      {
+        "comment": "",
+        "key": "mm:ss:msms",
+        "location": {
+          "startingColumn": 23,
+          "startingLine": 124
+        }
+      },
+      {
+        "comment": "",
+        "key": "mm:ss:msms",
+        "location": {
+          "startingColumn": 23,
+          "startingLine": 143
+        }
+      },
+      {
+        "comment": "",
+        "key": "Made with ❤️ by rdjpower",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 500
         }
       },
       {
@@ -31,7 +39,7 @@
         "key": "Spawn",
         "location": {
           "startingColumn": 20,
-          "startingLine": 299
+          "startingLine": 372
         }
       },
       {
@@ -39,7 +47,7 @@
         "key": "Audio Track",
         "location": {
           "startingColumn": 25,
-          "startingLine": 335
+          "startingLine": 407
         }
       },
       {
@@ -47,7 +55,7 @@
         "key": "Play/Pause",
         "location": {
           "startingColumn": 25,
-          "startingLine": 360
+          "startingLine": 432
         }
       },
       {
@@ -55,7 +63,7 @@
         "key": "Timecodes",
         "location": {
           "startingColumn": 25,
-          "startingLine": 376
+          "startingLine": 448
         }
       },
       {
@@ -63,7 +71,7 @@
         "key": "Open File",
         "location": {
           "startingColumn": 32,
-          "startingLine": 337
+          "startingLine": 409
         }
       },
       {
@@ -71,7 +79,7 @@
         "key": "Select an audio track to play.",
         "location": {
           "startingColumn": 30,
-          "startingLine": 356
+          "startingLine": 428
         }
       },
       {
@@ -79,7 +87,7 @@
         "key": "⌘ ⇧ R",
         "location": {
           "startingColumn": 30,
-          "startingLine": 366
+          "startingLine": 438
         }
       },
       {
@@ -87,7 +95,7 @@
         "key": "⌘ R",
         "location": {
           "startingColumn": 30,
-          "startingLine": 372
+          "startingLine": 444
         }
       },
       {
@@ -95,7 +103,7 @@
         "key": "Format: mm:ss:msms",
         "location": {
           "startingColumn": 35,
-          "startingLine": 401
+          "startingLine": 471
         }
       },
       {
@@ -103,7 +111,7 @@
         "key": "Time Start: ",
         "location": {
           "startingColumn": 30,
-          "startingLine": 403
+          "startingLine": 473
         }
       },
       {
@@ -111,7 +119,7 @@
         "key": "Format: mm:ss:msms",
         "location": {
           "startingColumn": 35,
-          "startingLine": 407
+          "startingLine": 479
         }
       },
       {
@@ -119,7 +127,7 @@
         "key": "Time End: ",
         "location": {
           "startingColumn": 30,
-          "startingLine": 409
+          "startingLine": 481
         }
       }
     ]

@@ -56,6 +56,10 @@ class FileSpammer: Useful, Identifiable {
     var startTime: UInt
     var endTime: UInt
     
+    private enum CodingKeys : String, CodingKey {
+        case name, count, urls, startTime, endTime
+    }
+    
     init(startTime: UInt, endTime: UInt, count: UInt) {
         self.startTime = startTime
         self.endTime = endTime

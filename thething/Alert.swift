@@ -237,16 +237,8 @@ class AlertHeader: Identifiable, Useful {
     let help: Bool
     let leftAlign: Bool
     
-    func `do`() {
-        let w = Alert(self)
-        window = w
-        w.makeKeyAndOrderFront(nil)
-        w.setFrame(NSRect(origin: setPosition, size: w.frame.size), display: true)
-    }
-    
-    func done() {
-        window?.close()
-        window = nil
+    enum CodingKeys: String, CodingKey {
+        case name, startTime, endTime, img, text, info, button1, button2, button3, checkBox, help, leftAlign, setPosition
     }
     
     init(startTime: UInt, endTime: UInt,
@@ -280,6 +272,60 @@ class AlertHeader: Identifiable, Useful {
             window?.center()
             window?.toggleSetMode(true)
         }
+    }
+    
+    func encode(to encoder: any Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(startTime, forKey: .startTime)
+        try container.encode(endTime, forKey: .endTime)
+        
+        guard let tr = img.tiffRepresentation else {
+            return
+        }
+        
+        try container.encode(tr.base64EncodedString(), forKey: .img)
+        try container.encode(name, forKey: .name)
+        try container.encode(text, forKey: .text)
+        try container.encode(info, forKey: .info)
+        try container.encode(button1, forKey: .button1)
+        try container.encode(button2, forKey: .button2)
+        try container.encode(button3, forKey: .button3)
+        try container.encode(checkBox, forKey: .checkBox)
+        try container.encode(help, forKey: .help)
+        try container.encode(leftAlign, forKey: .leftAlign)
+        try container.encode(setPosition, forKey: .setPosition)
+    }
+    
+    required init(from decoder: any Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        startTime = try container.decode(UInt.self, forKey: .startTime)
+        endTime = try container.decode(UInt.self, forKey: .endTime)
+        
+        let d = Data(base64Encoded: try container.decode(String.self, forKey: .img), options: [])
+        img = NSImage(data: d!)!
+        
+        text = try container.decodeIfPresent(String.self, forKey: .text)
+        info = try container.decodeIfPresent(String.self, forKey: .info)
+        button1 = try container.decode(String.self, forKey: .button1)
+        button2 = try container.decodeIfPresent(String.self, forKey: .button2)
+        button3 = try container.decodeIfPresent(String.self, forKey: .button3)
+        checkBox = try container.decodeIfPresent(String.self, forKey: .checkBox)
+        help = try container.decode(Bool.self, forKey: .help)
+        leftAlign = try container.decode(Bool.self, forKey: .leftAlign)
+        setPosition = try container.decode(CGPoint.self, forKey: .setPosition)
+    }
+    
+    func `do`() {
+        let w = Alert(self)
+        window = w
+        w.makeKeyAndOrderFront(nil)
+        w.setFrame(NSRect(origin: setPosition, size: w.frame.size), display: true)
+    }
+    
+    func done() {
+        window?.close()
+        window = nil
     }
 }
 

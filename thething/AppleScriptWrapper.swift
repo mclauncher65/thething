@@ -15,6 +15,10 @@ struct AppleScriptWrapper: Useful, Identifiable {
     var startTime: UInt
     var endTime: UInt // ~~ Useless ~~
     
+    private enum CodingKeys : String, CodingKey {
+        case name, script, startTime, endTime
+    }
+    
     init(name: String, script: String, startTime: UInt, endTime: UInt) {
         self.name = name
         self.startTime = startTime
