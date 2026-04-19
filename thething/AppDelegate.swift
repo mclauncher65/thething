@@ -9,6 +9,7 @@ import Cocoa
 import SwiftUI
 import UniformTypeIdentifiers
 import AVFoundation
+import Combine
 
 enum Target: CaseIterable, Identifiable {
     var id: UUID {
@@ -165,7 +166,7 @@ struct TimecodeView : View {
     }
 }
 
-protocol Useful: Identifiable {
+protocol Useful: Identifiable, Codable {
     var id: UUID {get}
     var name: String {get}
     var startTime: UInt {get set}
@@ -209,15 +210,86 @@ extension View {
     }
 }
 
+enum err : Error {
+    case no
+}
+
+class AnyUseful: Useful {
+    var body: any Useful
+    
+    let id = UUID()
+    let name: String
+    var startTime: UInt
+    var endTime: UInt
+    
+    enum CodingKeys: String, CodingKey {
+        case name, startTime, endTime, body
+    }
+    
+    func `do`() {
+        body.do()
+    }
+    
+    func done() {
+        body.done()
+    }
+    
+    init(body: any Useful) {
+        self.body = body
+        self.name = body.name
+        self.startTime = body.startTime
+        self.endTime = body.endTime
+    }
+    
+    func encode(to encoder: any Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(name, forKey: .name)
+        try container.encode(startTime, forKey: .startTime)
+        try container.encode(endTime, forKey: .endTime)
+        try container.encode(body, forKey: .body)
+    }
+    
+    required init(from decoder: any Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        name = try container.decode(String.self, forKey: .name)
+        startTime = try container.decode(UInt.self, forKey: .startTime)
+        endTime = try container.decode(UInt.self, forKey: .endTime)
+        
+        switch name {
+        case "Alert":
+            body = try container.decode(AlertHeader.self, forKey: .body)
+            return
+        case "Set Desktop Image":
+            body = try container.decode(DesktopImageSetter.self, forKey: .body)
+            return
+        case "Dock Alignment":
+            body = try container.decode(AppleScriptWrapper.self, forKey: .body)
+            return
+        case "File Spam":
+            body = try container.decode(FileSpammer.self, forKey: .body)
+            return
+        default: break
+        }
+        
+        throw err.no
+    }
+}
+
+class AppState: ObservableObject {
+    @Published public var list: [AnyUseful] = []
+}
+
 struct AppView: View {
+    public static var st = AppState()
+    @ObservedObject private var state = st
+    
     @State private var target = Target.RED
     
     @State private var timeStart = "00:00:000"
     @State private var timeEnd = "00:00:000"
     
-    @State private var highest: UInt = 0
+    private var highest: UInt { state.list.last?.endTime ?? 0 }
     
-    @State private var list: [any Useful] = []
     @State private var done = false
     
     @State private var openedFile = false
@@ -242,7 +314,7 @@ struct AppView: View {
                 let currentMillis = millis
                 
                 Task {
-                    for item in list {
+                    for item in state.list {
                         if item.startTime != currentMillis && item.endTime != currentMillis {
                             continue
                         }
@@ -263,7 +335,10 @@ struct AppView: View {
             
             done = false
             
-            for item in list {
+            audioPlayer?.stop()
+            audioPlayer?.currentTime = 0
+            
+            for item in state.list {
                 item.done()
             }
             
@@ -273,8 +348,6 @@ struct AppView: View {
     }
     
     func stop() {
-        audioPlayer?.stop()
-        audioPlayer?.currentTime = 0
         done = true
     }
     
@@ -314,7 +387,6 @@ struct AppView: View {
                 }
                 
                 if unwrappedTimeEnd > highest {
-                    highest = unwrappedTimeEnd
                     timeStart = deformat(highest)
                     timeEnd = deformat(highest)
                 }
@@ -323,9 +395,9 @@ struct AppView: View {
                     return
                 }
                 
-                list.append(item)
+                state.list.append(AnyUseful(body: item))
                 
-                list.sort(by: {
+                state.list.sort(by: {
                     return $0.endTime < $1.endTime
                 })
             }).buttonStyle(.borderedProminent)
@@ -374,23 +446,21 @@ struct AppView: View {
                 }
                 
                 Section("Timecodes") {
-                    ForEach(list, id: \.id) {item in
+                    ForEach(state.list, id: \.id) {item in
                         TimecodeView(item, {
-                            list.sort(by: {
-                                return $0.endTime < $1.endTime
+                            state.list.sort(by: {
+                                return $0.endTime != $1.endTime ? $0.endTime < $1.endTime : $0.startTime < $1.startTime
                             })
                             
-                            highest = list.last?.endTime ?? 0
                             timeStart = deformat(highest)
                             timeEnd = deformat(highest)
                         }, {
                             var bool = false
-                            if list.last?.id == item.id {
+                            if state.list.last?.id == item.id {
                                 bool = true
                             }
-                            list.removeAll(where: {$0.id == item.id})
+                            state.list.removeAll(where: {$0.id == item.id})
                             if bool {
-                                highest = list.last?.endTime ?? 0
                                 timeStart = deformat(highest)
                                 timeEnd = deformat(highest)
                             }
@@ -401,18 +471,22 @@ struct AppView: View {
                         TextField("Format: mm:ss:msms", text: $timeStart).textFieldStyle(.squareBorder).fixedSize()
                     } label: {
                         Text("Time Start: ")
+                    }.onChange(of: highest) {
+                        timeStart = deformat(highest)
                     }
                     
                     LabeledContent {
                         TextField("Format: mm:ss:msms", text: $timeEnd).textFieldStyle(.squareBorder).fixedSize()
                     } label: {
                         Text("Time End: ")
+                    }.onChange(of: highest) {
+                        timeEnd = deformat(highest)
                     }
                 }
                 
                 switch target {
                 case .RED:
-                    AlertForm(target.getController(), lastAlert: list.filter({$0 is AlertHeader}).last as? AlertHeader)
+                    AlertForm(target.getController(), lastAlert: state.list.filter({$0.body is AlertHeader}).last?.body as? AlertHeader)
                 case .GREEN:
                     DockAlignerForm(target.getController())
                 case .TEAL:
@@ -423,7 +497,7 @@ struct AppView: View {
             }.listStyle(.plain)
             
             
-            Text("Made with 􀊵 by rdjpower")
+            Text("Made with ❤️ by rdjpower")
         }.padding()
     }
 }
@@ -431,6 +505,72 @@ struct AppView: View {
 @MainActor
 class AppDelegate: NSObject, NSApplicationDelegate {
     public var window: NSWindow?
+    
+    @objc func save(_ sender: Any?) {
+        let sp = NSSavePanel()
+        sp.title = "Save the App Data"
+        sp.message = "Save your app data so you can open it later."
+        sp.nameFieldStringValue = "app.json"
+        sp.canCreateDirectories = true
+        sp.allowedContentTypes = [.json]
+        
+        let response = sp.runModal()
+        
+        if response != .OK {
+            return
+        }
+        
+        guard let url = sp.url else {
+            return
+        }
+        
+        if !url.startAccessingSecurityScopedResource() {
+            return
+        }
+        
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = .prettyPrinted
+        
+        do {
+            let data = try encoder.encode(AppView.st.list)
+            try data.write(to: url)
+        } catch {
+            NSAlert(error: error).runModal()
+        }
+        
+        url.stopAccessingSecurityScopedResource()
+    }
+    
+    @objc func load(_ sender: Any?) {
+        let op = NSOpenPanel()
+        op.allowedContentTypes = [.json]
+        op.canChooseFiles = true
+        op.allowsMultipleSelection = false
+        
+        let response = op.runModal()
+        if response != .OK {
+            return
+        }
+        
+        guard let url = op.url else {
+            return
+        }
+        
+        if !url.startAccessingSecurityScopedResource() {
+            return
+        }
+        
+        let decoder = JSONDecoder()
+        
+        do {
+            let data = try Data(contentsOf: url)
+            AppView.st.list = try decoder.decode([AnyUseful].self, from: data)
+        } catch {
+            NSAlert(error: error).runModal()
+        }
+        
+        url.stopAccessingSecurityScopedResource()
+    }
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
@@ -453,11 +593,27 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         
         guard let app = menu.item(at: 0),
-              let submenu = app.submenu else { return }
+        let submenu = app.submenu else {
+            return
+        }
         
         let about = NSMenuItem(title: "About thething", action: #selector(NSApplication.orderFrontStandardAboutPanel(_:)), keyEquivalent: "")
         
-        submenu.insertItem(about, at: 0)
+        submenu.addItem(about)
+        
+        let fileMenu = NSMenuItem(title: "File", action: nil, keyEquivalent: "")
+        let subMenu = NSMenu()
+        
+        fileMenu.submenu = subMenu
+        menu.addItem(fileMenu)
+        
+        subMenu.addItem(NSMenuItem.separator())
+        subMenu.addItem(NSMenuItem(title: "Save", action: #selector(save(_:)), keyEquivalent: "s"))
+        
+        let mi = NSMenuItem(title: "Open...", action: #selector(load(_:)), keyEquivalent: "o")
+        mi.image = NSImage(systemSymbolName: "arrow.up.forward.app", accessibilityDescription: nil)
+        
+        subMenu.addItem(mi)
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
