@@ -16,3 +16,4 @@ struct App {
         _ = NSApplicationMain(CommandLine.argc, CommandLine.unsafeArgv)
     }
 }
+ 
